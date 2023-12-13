@@ -1,28 +1,7 @@
-﻿*Recommended Markdown Viewer: [Markdown Editor](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.MarkdownEditor2)*
+简单介绍一下这个项目：
 
-## Getting Started
+这里暂时是完全我自己开发的一个网络测速小软件，后端采用Python编写，使用了Python的SpeedTest库来构建。前端采用Microsoft前段时间推出的WinUI3框架来实现GUI界面（图形化界面，Graphical user interface)
 
-Browse and address `TODO:` comments in `View -> Task List` to learn the codebase and understand next steps for turning the generated code into production code.
+目前后端已经暂时完成，目前没有新的需求。前端的UI设计目前还在开发中，由于我目前没有接触过WinUI3，所以可能会花很长的时间来学习这个前端框架。
 
-Explore the [WinUI Gallery](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) to learn 
-available controls and design patterns.
-
-Relaunch Template Studio to modify the project by right-clicking on the project in `View -> Solution Explorer` then selecting `Add -> New Item (Template Studio)`.
-
-## Publishing
-
-For projects with MSIX packaging, right-click on the application project and select `Package and Publish -> Create App Packages...` to create an MSIX package.
-
-For projects without MSIX packaging, follow the [deployment guide](https://docs.microsoft.com/windows/apps/windows-app-sdk/deploy-unpackaged-apps) or add the `Self-Contained` Feature to enable xcopy deployment.
-
-## CI Pipelines
-
-See [README.md](https://github.com/microsoft/TemplateStudio/blob/main/docs/WinUI/pipelines/README.md) for guidance on building and testing projects in CI pipelines.
-
-## Changelog
-
-See [releases](https://github.com/microsoft/TemplateStudio/releases) and [milestones](https://github.com/microsoft/TemplateStudio/milestones).
-
-## Feedback
-
-Bugs and feature requests should be filed at https://aka.ms/templatestudio.
+就到这了，如果有什么好的想法欢迎提交Issues，就算你提交了我也不一定会看，哎嘿~
