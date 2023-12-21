@@ -1,4 +1,4 @@
-﻿using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using System.Diagnostics;
 using System.IO;
@@ -20,41 +20,49 @@ public sealed partial class HOMEPage : Page
 
         try
         {
-            var programPath = @"E:\学期项目\Network SpeedTest\Py\dist\Speedtest.exe"; // 你的程序路径
-            var workingDirectory = Path.GetDirectoryName(programPath);
-
-            // 设置工作目录
-            ProcessStartInfo startInfo = new ProcessStartInfo
+            await Task.Run(() =>
             {
-                FileName = programPath,
-                WorkingDirectory = workingDirectory,
-                UseShellExecute = false,
-                RedirectStandardOutput = true,
-                CreateNoWindow = true
-            };
+                var programPath = @"E:\学期项目\Network SpeedTest\Py\dist\Speedtest.exe"; // 你的程序路径
+                var workingDirectory = Path.GetDirectoryName(programPath);
 
-            using var process = new Process { StartInfo = startInfo };
-            process.Start();
+                // 设置工作目录
+                ProcessStartInfo startInfo = new ProcessStartInfo
+                {
+                    FileName = programPath,
+                    WorkingDirectory = workingDirectory,
+                    UseShellExecute = false,
+                    RedirectStandardOutput = true,
+                    CreateNoWindow = true
+                };
 
-            // 输出程序的标准输出，以便调试
-            string output = process.StandardOutput.ReadToEnd();
-            Debug.WriteLine(output);
+                using var process = new Process { StartInfo = startInfo };
+                process.Start();
 
-            // 等待程序结束
-            await process.WaitForExitAsync();
+                // 输出程序的标准输出，以便调试
+                string output = process.StandardOutput.ReadToEnd();
+                Debug.WriteLine(output);
 
-            // 检查 log 文件是否生成
-            var logFilePath = Path.Combine(path1: workingDirectory, "Speedtest.log");
-            if (File.Exists(logFilePath))
-            {
-                // 处理 log 文件，如果需要的话
-                // ...
-            }
+                // 等待程序结束
+                process.WaitForExit();
+
+                // 检查 log 文件是否生成
+                var logFilePath = Path.Combine(path1: workingDirectory, "Speedtest.log");
+                if (File.Exists(logFilePath))
+                {
+                    // 处理 log 文件，如果需要的话
+                    // ...
+                }
+            });
         }
         finally
         {
-            // 程序结束后，关闭加载动画
-            loadingRing.IsActive = false;
+            // 使用 Dispatcher 在 UI 线程上执行关闭加载动画的操作
+            await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+            {
+                loadingRing.IsActive = false;
+            });
         }
+
     }
+
 }
