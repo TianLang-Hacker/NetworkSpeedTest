@@ -1,0 +1,10 @@
+﻿{
+    "profiles": {
+      "Network SpeedTest (Package)": {
+        "commandName": "MsixPackage"
+      },
+      "Network SpeedTest (Unpackaged)": {
+        "commandName": "Project"
+      }
+    }
+}

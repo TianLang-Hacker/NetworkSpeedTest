@@ -1,0 +1,16 @@
+﻿<Page
+    x:Class="Network_SpeedTest.Views.HOMEPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:controls="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    mc:Ignorable="d">
+
+    <Grid x:ConnectionId='2' x:Name="ContentArea">
+        <Button Style="{StaticResource AccentButtonStyle}" Content="Accent style button" />
+        <ProgressRing IsActive="True" />
+        <controls:WebView2 x:ConnectionId='3' x:Name="MyWebView2" Source="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                           Grid.Row="1" Height="350" Width="700"/>
+    </Grid>
+</Page>
+

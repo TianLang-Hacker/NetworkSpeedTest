@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "XEd3KbLOsFBMbwjRvfp2rLLW1ziDXl9VPNp0Hcw76pr3LP2X6gYRLqdlghBNCHqEH4u4+fQlyucG7ONvvU4OMA==",
+  "success": true,
+  "projectFilePath": "E:\\学期项目\\Network SpeedTest.Core\\Network SpeedTest.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\TianLang Hacker\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}
